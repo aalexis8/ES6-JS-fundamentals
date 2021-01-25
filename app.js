@@ -1,38 +1,47 @@
-// Different types
+// Taking a look at type conversion -- before we talk about coercion
 
-// PRIMITIVE
+let val;
 
-// String
-const name = "Jason Bourne";
+// Number to string
+//val = 5;
+val = String(534);
+val = String(4 + 5);
 
-// Number -- js doesn't differentiate number types, it is all numbers
-const age = 35;
+// Bool to string
+val = String(true);
 
-// Boolean
-const hasKids = true;
+// Date to string
+val = String(new Date());
 
-// Null
-const car = null;
+// Array to string
+val = String([1, 2, 3, 4]);
 
-// Undefined
-let test;
+// toString() -- what's the difference, if any?
+val = (3).toString();
+val = false.toString();
 
-// Symbol
-const sym = Symbol();
+// String number
+val = Number("5");
+val = Number(true);
+val = Number(false);
+val = Number(null);
+val = Number("hello");
+val = Number([3, 4, 5, 6, 8]);
 
-// REFERENCE TYPES -- brings back Objects
+val = parseInt("100");
+val = parseFloat("132.34");
 
-// Array
-const hobbies = ["Soccer", "Music", "Kite Flying"];
+// Output
+console.log(val);
+console.log(typeof val);
+// console.log(val.length); // now val has a length
+console.log(val.toFixed());
 
-// Object literal
-const address = {
-  city: "Columbus",
-  state: "OH",
-};
+// Type Coercion
+const val1 = String(5);
+const val2 = 7;
 
-const today = new Date();
+const sum = Number(val1 + val2);
 
-console.log(today);
-
-console.log(typeof today);
+console.log(sum);
+console.log(typeof sum);
