@@ -1,31 +1,65 @@
-// Numbers & The Math Object
-
-const num1 = 100;
-const num2 = 50;
+// String Methods & Concatenation
+const firstName = "William";
+const lastName = "Henry";
+const age = 45;
+const str = "Hello there, my name is Al";
+const tags = "web design, web development, programming";
 
 let val;
 
-// The basics
-val = num1 + num2;
-val = num1 * num2;
-val = num1 - num2;
-// val = num1 / num2;
-// val = num1 % num2;
-//val = num1 + num2;
+val = firstName + lastName;
 
-// Math Object
-val = Math.PI;
-val = Math.E;
-val = Math.round(2.7);
-val = Math.ceil(2.4);
-val = Math.floor(3.1);
-val = Math.sqrt(144);
-val = Math.abs(-4);
-val = Math.pow(6, 3);
-val = Math.max(2, 55, 34, 23, 67, 86);
-val = Math.min(2, 55, 34, 23, 67, 86);
+// Concatenation
+val = firstName + " " + lastName;
 
-val = Math.random();
+// Append
+val = "Slim ";
+val += "Shady";
 
-val = Math.floor(Math.random() * 30 + 1);
+val = "Hello, my name is: " + firstName + "and I am " + age;
+
+// Escaping
+
+val = "That's awesome, I can't wait";
+
+// Properties and Methods available on string
+
+// Length
+val = firstName.length; // This is a property, not a method, so no ()
+
+// concat
+val = firstName.concat(" ", lastName);
+
+// Change case
+val = firstName.toUpperCase();
+val = lastName.toLocaleLowerCase();
+
+val = lastName[3];
+
+// indexOf()
+val = firstName.indexOf("l");
+val = lastName.lastIndexOf("r");
+
+// charAt()
+val = firstName.charAt("3");
+
+// Get last char
+val = firstName.charAt(firstName.length - 1);
+
+// substring()
+val = firstName.substring(0, 4);
+
+// slice
+val = firstName.slice(0, 4);
+val = firstName.slice(-3);
+
+// split()
+val = str.split(" ");
+val = tags.split(",");
+
+// replace()
+val = str.replace("Al", "Alex");
+
+// Includes()
+val = str.includes("Hello"); // This is case sensitive
 console.log(val);
