@@ -1,51 +1,31 @@
-// Object Literals
-
-// Define an object literal
-
-const person = {
-  firstName: "Jason",
-  lastName: "Voorhees",
-  age: 203,
-  email: "JasonV@hotmail.com",
-  hobbies: ["camping", "machette throwing", "coming back to life"],
-  address: {
-    city: "Miami",
-    state: "FL",
-  },
-  getBithYear: function () {
-    return 2021 - this.age;
-  },
-};
+// Dealing with Dates and times in JS
 
 let val;
 
-val = person;
+// the Date object in js defaults to todays date
+const today = new Date();
 
-// Get a specific value
-val = person.firstName;
-val = person["lastName"];
-val = person.age;
-val = person.hobbies;
-val = person.hobbies[2];
-val = person.address;
-val = person.address.city;
-val = person.address["state"];
-val = person.getBithYear();
+let birthday = new Date("9-10-1982 11:25:00");
+birthday = new Date("September 10 1981");
+birthday = new Date("9/10/1981");
 
-console.log(val);
+// val = birthday;
+// Calendar in js stores the months in an array -- january is 0
+val = today.getMonth();
+val = today.getDate(); // returns todays date in this case the 25th of janurary 2021
+val = today.getDay(); // Returns the day of the week, numerical 1, 2
+val = today.getFullYear();
+val = today.getHours();
+val = today.getMinutes();
+val = today.getSeconds();
+val = today.getMilliseconds();
+val = today.getTime();
 
-// Arrays of Objects
-const people = [
-  { name: "Freddy", age: 175 },
-  { name: "Pinhead", age: 125 },
-  { name: "Kraven", age: 76 },
-];
+birthday.setMonth(9);
+birthday.setDate(12);
+birthday.setFullYear(1972);
+birthday.setHours(4);
+birthday.setMinutes(34);
+birthday.setSeconds(25);
 
-for (let i = 0; i < people.length; i++) {
-  console.log(people[i].name);
-}
-
-for (let person of people) {
-  console.log(person.name);
-  console.log(person.age);
-}
+console.log(birthday);
