@@ -1,75 +1,63 @@
-// LOOPS, ITERATIONS
+// THE WINDOW OBJECT
 
-// CLASSIC FOR LOOP
-// for (let i = 0; i < 10; i++) {
-//   console.log(i);
+// WINDOW METHODS / OBJECTS / PROPERTIES
+
+// WINDOW BEING YOUR GLOBAL ENVIRONMENT IN THE BROWSER
+// console.log(123);
+
+// ALERT
+// window.alert("Hello Dez");
+
+// Prompt
+// const input = prompt();
+// alert(input);
+
+// Confirm
+// if (confirm("Are you sure")) {
+//   console.log("YES");
+// } else {
+//   console.log("NO");
 // }
 
-// CONTINUE
-// for (let i = 0; i < 10; i++) {
-//   if (i == 4) {
-//     console.log("4 Chinese folklore loves this number");
-//     continue;
-//   }
+// PROPERTIES LIKE HEIGHT AND WIDTH
+let val;
 
-//   if (i == 7) {
-//     break;
-//   }
-//   console.log("Number :" + i);
-// }
+// Outter height and width
+val = window.outerHeight;
+val = window.outerWidth;
 
-// WHILE LOOP
-// let i = 0;
+// Inner height and width
+val = window.innerHeight;
+val = window.innerWidth;
 
-// while (i < 10) {
-//   console.log("Number " + i);
-//   i++;
-// }
+// Scroll points
+val = window.scrollY;
+val = window.scrollX;
 
-// DO WHILE -- always run at least once
+// Location Object
+val = window.location;
+val = window.location.hostname;
+val = window.location.port;
+val = window.location.href;
+val = window.location.search; // returns the search string
 
-// let i = 200;
+// Redirect
+// window.location.href = "https://www.blagueit.com/";
+// Reload
+// window.location.reload();
 
-// do {
-//   console.log("Number " + i);
-// } while (i < 10);
+// History Object
+// window.history.go();
 
-// LOOP THROUGH ARRAY
-const cars = ["Mayback", "Benz", "Infinity", "Acura"];
+val = window.history.length;
 
-// for (let i = 0; i < cars.length; i++) {
-//   console.log(cars[i]);
-// }
+// Navigator Object
 
-// FOREACH
-// cars.forEach(function (car) {
-//   console.log(car);
-// });
+val = window.navigator;
+val = window.navigator.appName;
+val = window.navigator.appVersion;
+val = window.navigator.userAgent;
+val = window.navigator.platform; // Linux x86_64, Win32,
+val = window.navigator.vendor;
 
-// FOR OF
-// for (const car of cars) {
-//   console.log(car);
-// }
-
-// FOR IN
-const user = {
-  firstName: "Jason",
-  lastName: "Bourne",
-  age: 40,
-};
-
-for (let x in user) {
-  console.log(`${x} : ${user[x]}`);
-}
-
-// MAP
-const users = [
-  { id: 10, name: "Conners" },
-  { id: 20, name: "Jason" },
-  { id: 30, name: "Sarah" },
-];
-
-const ids = users.map(function (user) {
-  return user.id;
-});
-console.log(ids);
+console.log(val);
