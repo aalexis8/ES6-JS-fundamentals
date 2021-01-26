@@ -1,31 +1,95 @@
-// Dealing with Dates and times in JS
+// If statements and comparison operators
+// if(condition is met) {
+//    do
+// } else {
+//   do other thing
+// }
 
-let val;
+const id = 100;
+// let id;
 
-// the Date object in js defaults to todays date
-const today = new Date();
+// EQUAL TO
+// if (id == 100) {
+//   console.log("CORRECT");
+// } else {
+//   console.log("INCORRECT");
+// }
 
-let birthday = new Date("9-10-1982 11:25:00");
-birthday = new Date("September 10 1981");
-birthday = new Date("9/10/1981");
+// NOT EQUAL TO
+// if (id != 101) {
+//   console.log("CORRECT");
+// } else {
+//   console.log("INCORRECT");
+// }
 
-// val = birthday;
-// Calendar in js stores the months in an array -- january is 0
-val = today.getMonth();
-val = today.getDate(); // returns todays date in this case the 25th of janurary 2021
-val = today.getDay(); // Returns the day of the week, numerical 1, 2
-val = today.getFullYear();
-val = today.getHours();
-val = today.getMinutes();
-val = today.getSeconds();
-val = today.getMilliseconds();
-val = today.getTime();
+// EQUAL TO VALUE AND TYPE
+// if (id === 100) {
+//   console.log("CORRECT");
+// } else {
+//   console.log("INCORRECT");
+// }
 
-birthday.setMonth(9);
-birthday.setDate(12);
-birthday.setFullYear(1972);
-birthday.setHours(4);
-birthday.setMinutes(34);
-birthday.setSeconds(25);
+// NOT EQUAL TO VALUE AND TYPE
+// if (id !== 100) {
+//   console.log("CORRECT");
+// } else {
+//   console.log("INCORRECT");
+// }
 
-console.log(birthday);
+// TESTING FOR UNDEFINED INCORRECT WAY, NOT FOUND
+// if (id) {
+//   console.log(`The ID is: ${id}`);
+// } else {
+//   console.log("NO ID");
+// } // BUT IT IS NOT FOUND IS DIFFERENT FROM UNDEFINED
+
+// THE CONTEXT OF WHAT HE IS TRYING TO ACCOMPLISH
+// if (typeof id !== "undefined") {
+//   console.log(`The ID is:  ${id}`);
+// } else {
+//   console.log("NO ID");
+// } // if id was declared and we have no value, we still get NO ID
+// So testing if a variable is non-existant as opposed to testing if a variable is undefined. I think that's worth pointing out.
+
+// GREATER THAN OR LESS THAN
+// if (id > 100) {
+//   console.log("CORRECT");
+// } else {
+//   console.log("INCORRECT");
+// }
+
+// IF ELSE
+const color = "green";
+
+// if (color === "vert") {
+//   console.log("Color is red");
+// } else if (color === "blue") {
+//   console.log("Color is blue");
+// } else {
+//   console.log("Color is not red or blue");
+// }
+
+// LOGICAL OPERATORS
+const name = "Smith";
+const age = 20;
+
+// AND &&
+if (age > 0 && age < 12) {
+  console.log(`${name} is a child`);
+} else if (age >= 13 && age <= 19) {
+  console.log(`${name} is a teenager`);
+} else {
+  console.log(`${name} is an adult`);
+}
+
+// OR ||
+if (age < 16 || age > 65) {
+  console.log(`${name} can not run in race`);
+} else {
+  console.log(`${name} is registered for the race`);
+}
+
+// TERNARY OPERATOR --
+console.log(id === 100 ? "CORRECT" : "INCORRECT");
+
+//
