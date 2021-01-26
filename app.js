@@ -1,63 +1,27 @@
-// THE WINDOW OBJECT
+// Global Scope
+var a = 1;
+let b = 2;
+const c = 3;
 
-// WINDOW METHODS / OBJECTS / PROPERTIES
-
-// WINDOW BEING YOUR GLOBAL ENVIRONMENT IN THE BROWSER
-// console.log(123);
-
-// ALERT
-// window.alert("Hello Dez");
-
-// Prompt
-// const input = prompt();
-// alert(input);
-
-// Confirm
-// if (confirm("Are you sure")) {
-//   console.log("YES");
-// } else {
-//   console.log("NO");
+// Now inside a function, function scope
+// function test() {
+//   var a = 6;
+//   let b = 7;
+//   const c = 8;
+//   console.log("Function Scope: ", a, b, c);
 // }
 
-// PROPERTIES LIKE HEIGHT AND WIDTH
-let val;
+// test();
 
-// Outter height and width
-val = window.outerHeight;
-val = window.outerWidth;
+// Block Level Scope, anything inside of curly braces.
+// if (true) {
+//   // Block scope
+//   var a = 4; // var changes a globally here
+//   let b = 5;
+//   const c = 6;
+//   console.log("Block level: ", a, b, c);
+// } // let and const were added to allow level scoping. Fixing some of js weirdness
 
-// Inner height and width
-val = window.innerHeight;
-val = window.innerWidth;
-
-// Scroll points
-val = window.scrollY;
-val = window.scrollX;
-
-// Location Object
-val = window.location;
-val = window.location.hostname;
-val = window.location.port;
-val = window.location.href;
-val = window.location.search; // returns the search string
-
-// Redirect
-// window.location.href = "https://www.blagueit.com/";
-// Reload
-// window.location.reload();
-
-// History Object
-// window.history.go();
-
-val = window.history.length;
-
-// Navigator Object
-
-val = window.navigator;
-val = window.navigator.appName;
-val = window.navigator.appVersion;
-val = window.navigator.userAgent;
-val = window.navigator.platform; // Linux x86_64, Win32,
-val = window.navigator.vendor;
-
-console.log(val);
+// let and const have block level scope
+// while var has function scope -- that if it is not contained by a function it will be global
+console.log("Global Scope: ", a, b, c);
