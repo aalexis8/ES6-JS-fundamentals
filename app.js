@@ -1,84 +1,51 @@
-// Arrays & Array Methods
+// Object Literals
 
-// Create some arrays
-const numbers = [67, 34, 56, 73, 33, 44, 2];
+// Define an object literal
 
-// Creat using the array constructor
-const numbers1 = new Array(23, 45, 56, 78, 12);
-
-// Of course you can have an array of strings
-const vegetables = ["zucchini", "broccoli", "Arugula", "Beets"];
-
-// Unlike other languages, you can mixe types inside an array
-const mixed = [25, "What's up", true, null, { a: 1, b: 2 }, new Date()];
+const person = {
+  firstName: "Jason",
+  lastName: "Voorhees",
+  age: 203,
+  email: "JasonV@hotmail.com",
+  hobbies: ["camping", "machette throwing", "coming back to life"],
+  address: {
+    city: "Miami",
+    state: "FL",
+  },
+  getBithYear: function () {
+    return 2021 - this.age;
+  },
+};
 
 let val;
 
-// Get array length
-val = numbers.length;
-// Check if is array
-val = Array.isArray(numbers);
+val = person;
 
-// Return an index
-val = numbers[3];
-val = numbers[0];
+// Get a specific value
+val = person.firstName;
+val = person["lastName"];
+val = person.age;
+val = person.hobbies;
+val = person.hobbies[2];
+val = person.address;
+val = person.address.city;
+val = person.address["state"];
+val = person.getBithYear();
 
-// Insert into array
-numbers[2] = 203;
-
-// Find index of value
-val = numbers.indexOf(203);
-
-// MUTATING ARRAYS
-// Add on to end
-numbers.push(207);
-
-// Add to front
-// numbers.unshift(207);
-// numbers.pop();
-// numbers.shift();
-
-// Reverse the array
-// numbers.reverse();
-
-// numbers.splice(2, 1);
-
-// Concat an array
-val = numbers.concat(numbers1);
-
-// Basic Sort
-val = vegetables.sort();
-val = numbers.sort();
-
-// To sort by value, you need compare the values
-// Currently it is sorting by index -- the default
-// Too early to intro arrow functions .. but i threw it in.
-// I would think I could omit the return keyword in this case.
-// val = numbers.sort((x, y) => {
-//   return x - y;
-// });
-
-val = numbers.sort(function (x, y) {
-  return x - y;
-});
-
-// Reverse of the above sort
-// val = numbers.sort((x, y) => {
-//   return y - x;
-// });
-
-val = numbers.sort(function (x, y) {
-  return y - x;
-});
-
-// Find
-function under50(num) {
-  return num < 50;
-}
-
-function over50(num) {
-  return num > 50;
-}
-val = numbers.find(over50);
 console.log(val);
-console.log(numbers);
+
+// Arrays of Objects
+const people = [
+  { name: "Freddy", age: 175 },
+  { name: "Pinhead", age: 125 },
+  { name: "Kraven", age: 76 },
+];
+
+for (let i = 0; i < people.length; i++) {
+  console.log(people[i].name);
+}
+
+for (let person of people) {
+  console.log(person.name);
+  console.log(person.age);
+}
