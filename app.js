@@ -1,82 +1,75 @@
-// FUNCTION DECLARATIONS
-// function greet() {
-//   // console.log("Hello");
-//   return "Hello";
-// }
-// Now we console.log here at the function call
-// console.log(greet());
+// LOOPS, ITERATIONS
 
-//TAKING PARAMETERS (INPUT TO OUR FUNCTION)
-function greet(firstName) {
-  // now we can use the parameter/input in our function to do work
-  return "Hello " + firstName;
-}
-
-// MULTIPLE PARAMATERS
-function greet(firstName, lastName) {
-  // now we can use the parameter/input in our function to do work
-  return "Hello " + firstName + " " + lastName;
-}
-
-// DEFAULT VALUE PARAMETER, IN CASE IT IS CALLED WITHOUT A VALUE
-// BEFORE ES6
-// function greet(firstName, lastName) {
-//   if (typeof firstName === "undefined") {
-//     firstName = "John";
-//   }
-//   if (typeof lastName === "undefined") {
-//     lastName = "Dough";
-//   }
-//   return "Hello " + firstName + " " + lastName;
+// CLASSIC FOR LOOP
+// for (let i = 0; i < 10; i++) {
+//   console.log(i);
 // }
 
-// AFTER ES6 NOW DEFAULT VALUES CAN BE HANDLE LIKE THE FOLLOWING
-function greet(firstName = "John", lastName = "Dough") {
-  return "Hello " + firstName + " " + lastName;
-}
+// CONTINUE
+// for (let i = 0; i < 10; i++) {
+//   if (i == 4) {
+//     console.log("4 Chinese folklore loves this number");
+//     continue;
+//   }
 
-// Calling without passing a value
-// console.log(greet());
-// Now we can pass in a value when calling the function
-// console.log(greet("Alvin", "Chipmunk"));
+//   if (i == 7) {
+//     break;
+//   }
+//   console.log("Number :" + i);
+// }
 
-// FUNCTION EXPRESSIONS -- a function as a variable assignment
-// In such situation usually the function is anonymous
+// WHILE LOOP
+// let i = 0;
 
-const cube = function (x) {
-  return x * x * x;
+// while (i < 10) {
+//   console.log("Number " + i);
+//   i++;
+// }
+
+// DO WHILE -- always run at least once
+
+// let i = 200;
+
+// do {
+//   console.log("Number " + i);
+// } while (i < 10);
+
+// LOOP THROUGH ARRAY
+const cars = ["Mayback", "Benz", "Infinity", "Acura"];
+
+// for (let i = 0; i < cars.length; i++) {
+//   console.log(cars[i]);
+// }
+
+// FOREACH
+// cars.forEach(function (car) {
+//   console.log(car);
+// });
+
+// FOR OF
+// for (const car of cars) {
+//   console.log(car);
+// }
+
+// FOR IN
+const user = {
+  firstName: "Jason",
+  lastName: "Bourne",
+  age: 40,
 };
 
-// console.log(cube(3));
+for (let x in user) {
+  console.log(`${x} : ${user[x]}`);
+}
 
-// IMMEDIATELY INVOKABLE FUNCTIONS EXPRESSIONS -- IIFEs (isn't that an E40 song lol) -- declare and run at once
-(function () {
-  console.log("if you dig it, I dug it");
+// MAP
+const users = [
+  { id: 10, name: "Conners" },
+  { id: 20, name: "Jason" },
+  { id: 30, name: "Sarah" },
+];
+
+const ids = users.map(function (user) {
+  return user.id;
 });
-
-// Nothing happens in the above function because we have no called the function yet. See below : we call it by adding another set of parenthesis
-// (function () {
-//   console.log("if you dig it, I dug it");
-// })();
-
-// can be parameterized like any other functions
-// (function (name) {
-//   console.log("my swisher " + name);
-// })("E40");
-
-// PROPERTY METHODS -- functions inside an object is called a method
-const todo = {
-  add: function () {
-    console.log("Add todo...");
-  },
-  edit: function (id) {
-    console.log(`Edit todo ${id}`);
-  },
-};
-
-todo.delete = function () {
-  console.log("Deleting todo...");
-};
-todo.add();
-todo.edit(34);
-todo.delete();
+console.log(ids);
