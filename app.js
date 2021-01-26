@@ -1,65 +1,42 @@
-// String Methods & Concatenation
-const firstName = "William";
-const lastName = "Henry";
-const age = 45;
-const str = "Hello there, my name is Al";
-const tags = "web design, web development, programming";
+// Template literals, template strings part of es6, but compatible with all browsers.
 
-let val;
+// here some variables
+const name = "Doe";
+const age = 28;
+const job = "Software Developer";
+const city = "Arizona";
 
-val = firstName + lastName;
+let html;
 
-// Concatenation
-val = firstName + " " + lastName;
+// Without template strings (es5)
+html =
+  "<ul><li>Name: " +
+  name +
+  "</li><li>Age: " +
+  age +
+  " </li><li>Job: " +
+  job +
+  "</li><li>City: " +
+  city +
+  " </li></ul>";
 
-// Append
-val = "Slim ";
-val += "Shady";
+function hello() {
+  return "Hello";
+}
 
-val = "Hello, my name is: " + firstName + "and I am " + age;
+// With template literals, template strings, we can evaluate expressions and etc...
+html = `
+   <ul>
+    <li>Name: ${name}</li>
+    <li>Age: ${age}</li>
+    <li>Job: ${job}</li>
+    <li>City: ${city}</li>
+    <li>${2 + 5}</li>
+    <li>${hello()}</li>
+    <li>${age > 30 ? "Over 30" : "Under 30"}</li>
+   </ul>
 
-// Escaping
+`;
 
-val = "That's awesome, I can't wait";
-
-// Properties and Methods available on string
-
-// Length
-val = firstName.length; // This is a property, not a method, so no ()
-
-// concat
-val = firstName.concat(" ", lastName);
-
-// Change case
-val = firstName.toUpperCase();
-val = lastName.toLocaleLowerCase();
-
-val = lastName[3];
-
-// indexOf()
-val = firstName.indexOf("l");
-val = lastName.lastIndexOf("r");
-
-// charAt()
-val = firstName.charAt("3");
-
-// Get last char
-val = firstName.charAt(firstName.length - 1);
-
-// substring()
-val = firstName.substring(0, 4);
-
-// slice
-val = firstName.slice(0, 4);
-val = firstName.slice(-3);
-
-// split()
-val = str.split(" ");
-val = tags.split(",");
-
-// replace()
-val = str.replace("Al", "Alex");
-
-// Includes()
-val = str.includes("Hello"); // This is case sensitive
-console.log(val);
+// then add this html to the DOM
+document.body.innerHTML = html;
