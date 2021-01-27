@@ -1,38 +1,39 @@
-// Mouse Events
-const clearBtn = document.querySelector(".clear-tasks");
-const card = document.querySelector(".card");
+const form = document.querySelector("form");
+const taskInput = document.getElementById("task");
 const heading = document.querySelector("h5");
+const select = document.querySelector("select");
 
-// Click
-// clearBtn.addEventListener("click", runEvent);
+// Clear input (clears the forms input value after submit)
+// Which means you would normally run this after a submit, not here
+taskInput.value = "";
 
-// Doubleclick
-// clearBtn.addEventListener("dblclick", runEvent);
+// form.addEventListener("submit", runEvent);
 
-// Mousedown
-// clearBtn.addEventListener("mousedown", runEvent);
+// Keydown
+// taskInput.addEventListener("keydown", runEvent);
+// // Keypress
+// taskInput.addEventListener("keypress", runEvent);
+// // Keyup
+// taskInput.addEventListener("keyup", runEvent);
+// taskInput.addEventListener("focus", runEvent);
+// taskInput.addEventListener("blur", runEvent);
+// Cut
+// taskInput.addEventListener("cut", runEvent);
+// // Paste
+// taskInput.addEventListener("paste", runEvent);
 
-// Mouseup
-// clearBtn.addEventListener("mouseup", runEvent);
-// Mouseenter
-// clearBtn.addEventListener("mouseenter", runEvent);
-// card.addEventListener("mouseenter", runEvent);
-// // Mouse Leave
-// card.addEventListener("mouseleave", runEvent);
+// taskInput.addEventListener("input", runEvent);
 
-// // Mouseover
-// card.addEventListener("mouseover", runEvent);
-// // Mouseout
-// card.addEventListener("mouseout", runEvent);
+select.addEventListener("change", runEvent);
 
-// Mouse move
-card.addEventListener("mousemove", runEvent);
-
-// Event Handler
 function runEvent(e) {
   console.log(`EVENT TYPE: ${e.type}`);
 
-  heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+  console.log(e.target.value);
 
-  document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 80)`;
+  // heading.innerText = e.target.value;
+
+  // Get input value
+  // console.log(taskInput.value);
+  // e.preventDefault();
 }
