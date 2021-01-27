@@ -1,39 +1,49 @@
-const form = document.querySelector("form");
-const taskInput = document.getElementById("task");
-const heading = document.querySelector("h5");
-const select = document.querySelector("select");
+// EVENT BUBBLING
+// document.querySelector(".card-title").addEventListener("click", function () {
+//   console.log("card-title");
+// });
 
-// Clear input (clears the forms input value after submit)
-// Which means you would normally run this after a submit, not here
-taskInput.value = "";
+// document.querySelector(".card-content").addEventListener("click", function () {
+//   console.log("card-content");
+// });
 
-// form.addEventListener("submit", runEvent);
+// document.querySelector(".card").addEventListener("click", function () {
+//   console.log("card");
+// });
 
-// Keydown
-// taskInput.addEventListener("keydown", runEvent);
-// // Keypress
-// taskInput.addEventListener("keypress", runEvent);
-// // Keyup
-// taskInput.addEventListener("keyup", runEvent);
-// taskInput.addEventListener("focus", runEvent);
-// taskInput.addEventListener("blur", runEvent);
-// Cut
-// taskInput.addEventListener("cut", runEvent);
-// // Paste
-// taskInput.addEventListener("paste", runEvent);
+// document.querySelector(".col").addEventListener("click", function () {
+//   console.log("col");
+// });
 
-// taskInput.addEventListener("input", runEvent);
+// EVENT DELEGATION
 
-select.addEventListener("change", runEvent);
+// const delItem = document.querySelector(".delete-item");
 
-function runEvent(e) {
-  console.log(`EVENT TYPE: ${e.type}`);
+// delItem.addEventListener("click", deleteItem);
 
-  console.log(e.target.value);
+document.body.addEventListener("click", deleteItem);
 
-  // heading.innerText = e.target.value;
+// function deleteItem(e) {
+//   if (e.target.className === "fa fa-remove") {
+//     console.log("item deleted");
+//   }
+// }
 
-  // Get input value
-  // console.log(taskInput.value);
-  // e.preventDefault();
+// function deleteItem(e) {
+//   if (e.target.parentElement.className === "delete-item secondary-content") {
+//     console.log("item deleted");
+//   }
+// }
+
+// function deleteItem(e) {
+//   if (e.target.parentElement.classList.contains("delete-item")) {
+//     console.log("item deleted");
+//   }
+// }
+
+function deleteItem(e) {
+  if (e.target.parentElement.classList.contains("delete-item")) {
+    console.log("item deleted");
+    e.target.parentElement.parentElement.remove();
+  }
 }
