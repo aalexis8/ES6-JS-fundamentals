@@ -1,42 +1,63 @@
-// Single element DOM Selectors the two single -- element selectors
+// document.getElementsByClassName
 
-// document.getElementById()
+// const items = document.getElementsByClassName("collection-item");
 
-// console.log(document.getElementById("task-title"));
+// console.log(items);
+// console.log(items[0]);
 
-// Of course you can save task-title in a variable and save some typing
-// const taskTitle = document.getElementById("task-title");
-// Get elements' attributes
-// console.log(document.getElementById("task-title").id);
-// console.log(document.getElementById("task-title").className);
+// items[0].style.color = "red";
+// items[3].style.textContent = "Hello";
 
-// Change Styling
-// document.getElementById("task-title").style.background = "#333";
-// document.getElementById("task-title").style.color = "#fff";
-// document.getElementById("task-title").style.padding = "5px";
-// taskTitle.style.background = "#333";
-// taskTitle.style.color = "#fff";
-// taskTitle.style.padding = "5px";
+// const listItems = document
+//   .querySelector("ul")
+//   .getElementsByClassName("collection-item");
 
-// Change content
-// document.getElementById("task-title").textContent = "Task List";
-// document.getElementById("task-title").innerText = "My Task";
-// document.getElementById("task-title").innerHTML =
-//   '<span style="color:red"> Task List</span>';
-// taskTitle.textContent = "Task List";
-// taskTitle.innerText = "My Task";
-// taskTitleinnerHTML = '<span style="color:red"> Task List</span>';
+// console.log(listItems);
 
-// The newer more powerful selector is querySelector()
-// Able to select by more than just id, takes any css selector
-// document.querySelector()
-console.log(document.querySelector("#task-title"));
-console.log(document.querySelector(".card-title"));
-console.log(document.querySelector("h5")); // returns the first h5 found
-document.querySelector("li").style.color = "red";
-document.querySelector("ul li").style.color = "blue";
+// document.getElementsByTagName
 
-document.querySelector("li:last-child").style.color = "red";
-document.querySelector("li:nth-child(3").style.color = "yellow";
-document.querySelector("li:nth-child(4)").textContent = "Hello World";
-document.querySelector("li:nth-child(odd)").style.background = "#ccc"; // only the first odd is changed, because this is a single selector
+// let lis = document.getElementsByTagName("li");
+
+// console.log(lis);
+// console.log(lis[0]);
+
+// lis[0].style.color = "red";
+// lis[3].textContent = "Hello";
+
+// // Convert HTML Collection into array
+// lis = Array.from(lis);
+
+// lis.reverse();
+
+// lis.forEach(function (li, index) {
+//   console.log(li.className);
+//   li.textContent = `${index}: Hello `; //            "Hello";
+// });
+
+// console.log(lis);
+
+// document.querySelectorAll -- returns a node list forEach adjacent
+// NodeList don't need to be converted into an array.
+const items = document.querySelectorAll("ul.collection li.collection-item");
+
+items.forEach(function (item, index) {
+  // console.log(item.className);
+  item.textContent = `${index}: Hello `;
+});
+
+const liOdd = document.querySelectorAll("li:nth-child(odd)");
+const liEven = document.querySelectorAll("li:nth-child(even)");
+
+liOdd.forEach(function (li, index) {
+  li.style.background = "#ccc";
+});
+
+for (let i = 0; i < liEven.length; i++) {
+  liEven[i].style.background = "#f4f4f4";
+}
+
+// Just wanted to check that this works here also
+for (const li of liEven) {
+  li.style.background = "red";
+}
+console.log(items);
